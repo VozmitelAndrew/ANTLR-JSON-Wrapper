@@ -1,4 +1,4 @@
-// Generated from C:/Users/andre/IdeaProjects/LatTryFR/src/main/antlr4/Java.g4 by ANTLR 4.13.2
+// Generated from C:/Users/andre/IdeaProjects/JavaWrapperGradle/BuildSrc/src/main/antlr4/Java.g4 by ANTLR 4.13.2
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -46,6 +46,16 @@ public interface JavaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTypeDeclaration(JavaParser.TypeDeclarationContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link JavaParser#typeTypeOrVoid}.
+	 * @param ctx the parse tree
+	 */
+	void enterTypeTypeOrVoid(JavaParser.TypeTypeOrVoidContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link JavaParser#typeTypeOrVoid}.
+	 * @param ctx the parse tree
+	 */
+	void exitTypeTypeOrVoid(JavaParser.TypeTypeOrVoidContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link JavaParser#classDeclaration}.
 	 * @param ctx the parse tree
@@ -146,16 +156,6 @@ public interface JavaListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitConstructorDeclaration(JavaParser.ConstructorDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link JavaParser#typeTypeOrVoid}.
-	 * @param ctx the parse tree
-	 */
-	void enterTypeTypeOrVoid(JavaParser.TypeTypeOrVoidContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link JavaParser#typeTypeOrVoid}.
-	 * @param ctx the parse tree
-	 */
-	void exitTypeTypeOrVoid(JavaParser.TypeTypeOrVoidContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link JavaParser#typeType}.
 	 * @param ctx the parse tree

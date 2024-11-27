@@ -20,6 +20,11 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+tasks.build {
+    dependsOn(tasks.named("generateStats"))
+}
+
 kotlin {
     jvmToolchain(21)
 }

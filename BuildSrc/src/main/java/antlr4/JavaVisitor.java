@@ -1,4 +1,4 @@
-// Generated from C:/Users/andre/IdeaProjects/LatTryFR/src/main/antlr4/Java.g4 by ANTLR 4.13.2
+// Generated from C:/Users/andre/IdeaProjects/JavaWrapperGradle/BuildSrc/src/main/antlr4/Java.g4 by ANTLR 4.13.2
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -33,6 +33,12 @@ public interface JavaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitTypeDeclaration(JavaParser.TypeDeclarationContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link JavaParser#typeTypeOrVoid}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitTypeTypeOrVoid(JavaParser.TypeTypeOrVoidContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link JavaParser#classDeclaration}.
 	 * @param ctx the parse tree
@@ -93,12 +99,6 @@ public interface JavaVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitConstructorDeclaration(JavaParser.ConstructorDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link JavaParser#typeTypeOrVoid}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitTypeTypeOrVoid(JavaParser.TypeTypeOrVoidContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link JavaParser#typeType}.
 	 * @param ctx the parse tree

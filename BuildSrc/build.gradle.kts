@@ -1,27 +1,6 @@
 group = "JsonWrapper"
 version = "1.0.0"
 
-
-//gradlePlugin {
-//    plugins {
-//        register("generateStats") {
-//            id = "generateStats"
-//            group = "custom_plugin"
-//            implementationClass = "JsonWrapperTask"
-//        }
-//    }
-//}
-
-//gradlePlugin {
-//    plugins {
-//        create("my-binary-plugin") {
-//            id = "com.example.my-binary-plugin"
-//            implementationClass = "MyCreateFileBinaryPlugin"
-//        }
-//    }
-//}
-
-
 plugins {
     `kotlin-dsl`
     kotlin("jvm") version "2.0.10"

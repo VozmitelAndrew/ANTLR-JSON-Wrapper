@@ -13,22 +13,29 @@ importDeclaration
     ;
 
 typeDeclaration
-    : modifiers? (classDeclaration | interfaceDeclaration)
+    : classDeclaration
+    | interfaceDeclaration
+    ;
+
+typeTypeOrVoid
+    : typeType
+    | 'void'
     ;
 
 classDeclaration
-    : 'class' IDENTIFIER '{' (classBodyDeclaration)* '}'
+    : modifiers 'class' IDENTIFIER '{' (classBodyDeclaration)* '}'
     ;
 
 interfaceDeclaration
     : 'interface' IDENTIFIER '{' (interfaceBodyDeclaration)* '}'
     ;
 
-
 classBodyDeclaration
     : methodDeclaration
     | fieldDeclaration
     | constructorDeclaration
+    | classDeclaration
+    | interfaceDeclaration
     ;
 
 interfaceBodyDeclaration
@@ -36,11 +43,12 @@ interfaceBodyDeclaration
     ;
 
 methodDeclaration
-    : modifiers? typeTypeOrVoid IDENTIFIER '(' (formalParameters)? ')' '{' (statement)* '}'
+    : modifiers typeTypeOrVoid IDENTIFIER '(' formalParameters? ')' block
+    | modifiers IDENTIFIER '(' formalParameters? ')' block
     ;
 
 modifiers
-    : ('public' | 'private' | 'protected' | 'static')*
+    : ('public' | 'private' | 'protected' | 'static' | 'final' | 'abstract')*
     ;
 
 formalParameters
@@ -52,16 +60,11 @@ formalParameter
     ;
 
 fieldDeclaration
-    : modifiers? typeType variableDeclarators ';'
+    : modifiers typeType variableDeclarators ';'
     ;
 
 constructorDeclaration
-    : modifiers? IDENTIFIER '(' (formalParameters)? ')' block
-    ;
-
-typeTypeOrVoid
-    : typeType
-    | 'void'
+    : modifiers IDENTIFIER '(' formalParameters? ')' block
     ;
 
 typeType
@@ -107,17 +110,16 @@ expression
     : methodCall
     | IDENTIFIER
     | literal
+    | variableDeclarator
     ;
 
 methodCall
     : qualifiedName '(' argumentList? ')'
     ;
 
-
 argumentList
     : expression (',' expression)*
     ;
-
 
 literal
     : INTEGER_LITERAL
@@ -167,3 +169,8 @@ COMMENT
 LINE_COMMENT
     : '/*' .*? '*/' -> skip
     ;
+
+SQUARE_BRACKETS
+    : '[' .*? ']' -> skip
+    ;
+
